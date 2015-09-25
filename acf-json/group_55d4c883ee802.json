@@ -6,7 +6,7 @@
             "key": "field_55d4c8ed4b508",
             "label": "General",
             "name": "",
-            "type": "tab",
+            "type": "accordion",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,8 +15,7 @@
                 "class": "field_type-tab field_key-field_55d4c8ed4b508",
                 "id": ""
             },
-            "placement": "left",
-            "endpoint": 0
+            "icon_class": "dashicons-arrow-right"
         },
         {
             "key": "field_55d4c8814b504",
@@ -152,7 +151,7 @@
             "key": "field_55d4c8be4b506",
             "label": "Header Options",
             "name": "",
-            "type": "tab",
+            "type": "accordion",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -161,8 +160,35 @@
                 "class": "field_type-tab field_key-field_55d4c8be4b506",
                 "id": ""
             },
-            "placement": "left",
-            "endpoint": 0
+            "icon_class": "dashicons-arrow-right"
+        },
+        {
+            "key": "field_5605b94321d7d",
+            "label": "Logo Position",
+            "name": "logo_position",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "left": "left",
+                "center": "center"
+            },
+            "default_value": [
+                
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "disabled": 0,
+            "readonly": 0
         },
         {
             "key": "field_5604338a4ef10",
@@ -367,7 +393,7 @@
             "key": "field_55d616e76456c",
             "label": "Footer Options",
             "name": "",
-            "type": "tab",
+            "type": "accordion",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -376,8 +402,7 @@
                 "class": "field_type-tab field_key-field_55d616e76456c",
                 "id": ""
             },
-            "placement": "left",
-            "endpoint": 0
+            "icon_class": "dashicons-arrow-right"
         },
         {
             "key": "field_55d617006456d",
@@ -503,7 +528,7 @@
             "key": "field_56043ca610408",
             "label": "Typography",
             "name": "",
-            "type": "tab",
+            "type": "accordion",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -512,8 +537,7 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "left",
-            "endpoint": 0
+            "icon_class": "dashicons-arrow-right"
         },
         {
             "key": "field_56043cbf10409",
@@ -529,7 +553,10 @@
                 "id": ""
             },
             "choices": [
-                
+                "Open Sans",
+                "Oswald",
+                "Lato",
+                "Crimson Text"
             ],
             "default_value": [
                 
@@ -658,7 +685,10 @@
                 "id": ""
             },
             "choices": [
-                
+                "Open Sans",
+                "Oswald",
+                "Lato",
+                "Crimson Text"
             ],
             "default_value": [
                 
@@ -791,5 +821,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1443118648
+    "modified": 1443215788
 }

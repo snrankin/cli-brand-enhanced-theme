@@ -106,6 +106,10 @@ jQuery(document).ready(function($) {
       
       $('.half-height').css('min-height', blockHeight2);
     }
+    
+    var instagramBlockHeight2 = $('.instagram-block').height();
+  
+    $('.instagram-wrapper').height(instagramBlockHeight2);
   });  
   
   var wow = new WOW({

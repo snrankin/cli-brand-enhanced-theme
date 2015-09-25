@@ -1,0 +1,48 @@
+<?php
+
+$root = dirname(dirname(dirname(dirname(dirname(__FILE__)))));
+
+if ( file_exists( $root.'/wp-load.php' ) ) {
+    require_once( $root.'/wp-load.php' );
+//    require_once( $root.'/wp-config.php' );
+} else {
+	$root = dirname(dirname(dirname(dirname(dirname(dirname(__FILE__))))));
+	if ( file_exists( $root.'/wp-load.php' ) ) {
+    require_once( $root.'/wp-load.php' );
+//    require_once( $root.'/wp-config.php' );
+	}
+}
+
+$header_bottom_border_width = 1;
+header("Content-type: text/css; charset=utf-8");
+
+if( function_exists('get_field') ) :
+
+?>
+
+<?php if (get_field('header_background_color', 'option')) :  $header_bg_color = get_field('header_background_color', 'option');?>
+
+.header-top{
+  background-color: <?php echo $header_bg_color; ?>;
+}
+
+<?php endif; ?>
+
+<?php if (get_field('logo_height', 'option')) :  $logo_height = get_field('logo_height', 'option');?>
+
+.site-logo-img{
+  max-height: <?php echo $logo_height; ?>px;
+}
+
+<?php endif; ?>
+
+<?php if (get_field('menu_bar_background', 'option')) :  $menu_bar_background = get_field('menu_bar_background', 'option');?>
+
+#menu{
+  background-color: <?php echo $menu_bar_background; ?>;
+}
+
+<?php endif; ?>
+
+<?php endif; ?>
+
