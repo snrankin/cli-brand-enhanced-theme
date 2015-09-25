@@ -1,0 +1,78 @@
+.btn, .caldera-grid input[type="submit"].btn{
+  font-family: $primary-font;
+  font-weight: 700;
+  display: block;
+  text-align: center;
+  padding: 10px 20px;
+  line-height: 1.2;
+  border-radius: 0;
+  cursor: pointer;
+  @include transition(all 0.3s ease-in-out);
+  @include appearance(none);
+  &.center-btn{
+    margin: 0 auto;  
+  }
+  &.btn-full-width{
+    display: block;
+    width: 100%;
+  }
+  @each $maincolor, $color in $main-colors {
+    &.#{$maincolor}.outline{
+      color: $color;
+      background: none;  
+      border: solid 2px $color;
+      &:hover{
+        color: #FFF;
+        background: $color; 
+      }
+    }
+    &.#{$maincolor}.solid{
+      color: #FFF;  
+      background: $color;
+    }
+    &.#{$maincolor}-hover:hover{
+      color: #FFF;  
+      background: $color;
+    }
+    &.color1.solid{
+      color: $black; 
+    }
+    &.color5.solid{
+      color: $black;  
+    }
+  }
+}
+
+.special-btn{
+  overflow: hidden;  
+  display: block;
+  &.center-btn{
+    margin: 0 auto;  
+  }
+  &.fill-space{
+    @include flex(1,1,auto);
+  }
+}
+
+.special-btn .panel{
+  @include backface-visibility(hidden);
+  @include transition(all 0.3s ease-in-out); 
+  @include display-flex;
+  @include justify-content(center); 
+  @include align-items(center);
+  .panel-inner{
+    @include flex(0,1,auto);
+    text-align: center; 
+    text-transform: uppercase; 
+    border-style: solid;
+    border-width: 2px;
+    font-weight: 700;
+    line-height: 1.4;
+    padding: 7px 10px;
+    white-space: nowrap;
+  }
+}
+
+.special-btn:hover .panel{
+  @include transform(translate(0, -100%));
+}

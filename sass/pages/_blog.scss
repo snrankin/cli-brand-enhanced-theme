@@ -1,0 +1,326 @@
+body.single-post{
+  .entry-content{
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto; 
+    padding: 0px;
+    background-color: $color5;
+    @include breakpoint($md){
+      width: 80%;
+      margin: 40px auto; 
+    }
+  }
+}
+
+body.blog .entry-content.news-feed{
+  padding: 20px;
+  @include breakpoint($md){
+    padding:40px;
+    width: 80%;
+    max-width: $grid-width;
+    margin: 0 auto;   
+  }
+  @include breakpoint($lrg){
+    padding:80px;
+  }
+}
+
+.news-feed-inner{
+  @include breakpoint($md){
+    @include display-flex;
+    @include flex-wrap(wrap);
+    @include align-items(stretch);  
+  }
+  .post-block-small .post-block-inner{
+    border: #FFF solid 5px;
+  }
+  .post-block, .post-block-small{
+    @include flex(1,1,auto); 
+    @include breakpoint($md){
+      width: 50%;  
+      min-height: 300px;
+      &:first-child{
+        width: 100%;   
+      }
+    }
+  }
+}
+
+@include keyframes(animatedBackground){
+  0%{
+    @include transform(scale(1)); 
+  }
+  100%{
+    @include transform(scale(1.2)); 
+  }
+}
+
+.post-block, .post-block-small{
+  @include display-flex;
+  a{
+    @include flex(1,1,auto);
+    @include display-flex;
+    @include align-items(stretch);
+    position: relative;
+    overflow: hidden;
+    &:hover{
+      *{
+        color: $color4;  
+      }
+      .post-block-inner{
+        @include bg-opacity($color1, 0.7);
+      }
+    }
+  }
+  *{
+    @include transition(all ease-in-out 0.3s);  
+  }
+  .post-img{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    @include filter(grayscale(1));
+  }
+  .post-block-inner{
+    @include flex(1,1,auto);
+    @include display-flex;
+    @include align-items(stretch);
+    @include flex-direction(column);
+    padding: 20px;
+    position: relative;
+    z-index: 5;
+    background-color: rgba(0,0,0,0.5);
+  }
+}
+
+.post-block-title{
+  @include flex(0,1,auto); 
+  text-transform: none; 
+  color: $color1;
+}
+
+.post-block-date{
+  @include flex(0,1,auto);  
+  font-family: 'Oswald';
+  font-weight: 700;
+}
+
+.post-block-excerpt{
+  padding: 20px 0;
+  opacity: 0;  
+  @include flex(1,1,auto); 
+  @include transition(all 0.3s ease-in-out);
+  @include transition-delay(0.1s);
+  p{
+    font-size: 14px;
+  }
+}
+
+.post-block-read-more{
+  @include flex(0,1,auto); 
+}
+
+.small-news-feed{
+  .post-block{
+    .post-block-inner{
+      padding: 20px;  
+    }
+  }
+}
+
+.post-image-window{
+  min-height: 100px;
+  font-size: 0;
+  line-height: 0;
+  @include filter(grayscale(1));
+  @include breakpoint($md){
+    min-height: 200px;
+  }
+  @include breakpoint($lrg){
+    min-height: 300px;  
+  }
+  img{
+    max-width: 100%;
+    height: auto;  
+    @include breakpoint($md){
+      opacity: 0;
+    }
+  }
+}
+
+.post-header{
+  padding: 20px;
+  background-color: $off-white;
+  h1{
+    text-transform: none;
+    font-weight: 700;  
+  }
+  .entry-date{
+    font-family: 'Oswald';
+    font-weight: 700;
+  }
+  @include breakpoint($md){
+    padding: 40px;
+    @include display-flex;
+    @include flex-wrap(nowrap);
+    @include justify-content(space-between);
+    @include align-items(center);
+  } 
+}
+
+.entry-content-inner{
+  padding: 20px;
+  @include breakpoint($md){
+    padding: 40px;  
+  }
+  @include breakpoint($mdl){
+    max-width: 80%;
+    margin: 0 auto;  
+  }
+}
+
+.entry-footer{
+  padding: 20px 0;
+  margin: 0 20px;
+  border-top: solid 1px $black;
+  @include display-flex;
+  @include flex-wrap(wrap);
+  @include justify-content(space-between); 
+  @include align-items(center);
+  @include breakpoint($md){
+    margin: 0 40px;  
+  }
+}
+
+#nav-below{
+  @include flex(0,1,auto);
+  @include display-flex;
+  @include flex-wrap(nowrap);
+  @include justify-content(center); 
+  @include align-items(center);
+  width: 100%;
+  margin-top: 20px;
+  @include breakpoint($md){
+    width: auto;  
+    margin-top: 0;
+  }
+  a{
+    @include flex(0,1,auto); 
+    padding: 0 15px; 
+    display: block;
+    white-space: nowrap;
+    margin: 0 5px;
+    .nav-txt, .fa{
+      line-height: 45px;
+    }
+  }
+}
+
+
+.news-block{
+  .half-block{
+    width: 100%;
+    @include breakpoint($mds){
+      width: 50%;  
+    }
+    h3{
+      @include breakpoint($mds){
+        font-size: 16px;
+      }
+      @include breakpoint($md){
+        font-size: 20px;  
+      }
+      @include breakpoint($xlrg){
+        font-size: 30px;
+      }
+    }
+    p{
+      @include breakpoint($mds){
+        font-size: 12px;
+      }
+      @include breakpoint($md){
+        font-size: 14px;  
+      }  
+    }
+  }
+  .news-inner-block{
+    border: #FFF solid 5px;
+    min-height: 150px;  
+  }
+  .twitter-feed-wrapper{
+    background: url(../imgs/twitter-bg.jpg) center no-repeat;
+    background-size: cover; 
+    padding: 10px; 
+    @include breakpoint($xlrg){
+      padding: 20px;
+    }
+    .ttf-tweet{
+      display: none;
+      &:first-child{
+        display: block;  
+      }
+    }
+  }
+  .btn.news-inner-block{
+    padding: 10px;
+    text-align: left;
+    text-transform: none;  
+    @include breakpoint($xlrg){
+      padding: 20px;
+    }
+  }
+}
+
+.post-block-small .post-block-inner{
+  padding: 10px;
+  @include display-flex;
+  @include flex-direction(column);
+  @include justify-content(space-between);
+  @include breakpoint($xlrg){
+    padding: 20px;
+  }
+  div{
+    @include flex(0,1,auto);
+    &:first-child{
+      margin-bottom: 20px;  
+    }
+  }
+  h3.post-block-title{
+    font-weight: 700;  
+  }
+  p{
+   font-weight: 300; 
+  }
+  .entry-meta{
+    @include display-flex;
+    @include justify-content(space-between);
+    @include align-items(center);
+    .news-icon{
+      @include flex(0,1,auto);
+      width: 50px;
+      height: auto;
+    }
+    .post-block-date{
+      @include flex(0,1,auto);
+      font-weight: 300;
+    }
+  }
+}
+
+.facebook-wrapper{
+  background: $off-white;
+  padding: 20px;
+}
+
+.blog-feed-wrapper.news-inner-block{
+ @include flex(1,1,auto);
+ @include display-flex;
+ .post-block:only-child{
+   @include flex(1,1,auto);  
+ }
+}

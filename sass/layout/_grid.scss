@@ -1,0 +1,204 @@
+.row-wrapper{
+  position: relative;  
+  margin: 0 auto;
+}
+
+.flex-row{
+  @include display-flex;    
+  @include flex-wrap(wrap);
+  padding: 10px;
+  @include breakpoint($md){
+    padding: 40px;  
+  }
+  @include breakpoint($lrg){
+    padding: 40px;  
+  }
+}
+
+.flex-direction-row{
+  @include flex-direction(row); 
+}
+.flex-direction-column{
+  @include flex-direction(column); 
+}
+
+.flex-position-center{
+  @include justify-content(center);  
+}
+.flex-position-start{
+  @include justify-content(flex-start);
+}
+.flex-position-end{
+  @include justify-content(flex-end);
+}
+.flex-position-space-between{
+  @include justify-content(space-between);
+}
+.flex-position-space-around{
+  @include justify-content(space-around);
+}
+
+.flex-align-center{
+  @include align-items(center);  
+}
+.flex-align-start{
+  @include align-items(flex-start);
+}
+.flex-align-end{
+  @include align-items(flex-end);
+}
+.flex-align-stretch{
+  @include align-items(stretch);
+}
+
+.flex-single-align-center{
+  @include align-self(center);  
+}
+.flex-single-align-start{
+  @include align-self(flex-start);
+}
+.flex-single-align-end{
+  @include align-self(flex-end);
+}
+.flex-single-align-stretch{
+  @include align-self(stretch);
+}
+
+@for $i from 1 through 12{
+  .flex-order-#{$i}{
+    @include breakpoint($md){
+      @include order($i);
+    }
+  }
+  .max-width-col-#{$i}{
+    max-width: ($i/12) * $grid-width - 60px; 
+  }
+}
+
+.flex-order-2.battery-img{
+  @include order(1);
+  @include breakpoint($mdl){
+    @include order(2);
+  }
+}
+
+.flex-order-1.battery-img{
+  @include order(2);
+  @include breakpoint($mdl){
+    @include order(1);
+  }
+}
+
+
+.flex-col{
+  @include flex(0, 1, auto); 
+  position: relative;
+  @include breakpoint($md){
+    @include display-flex;
+    @include flex-direction(column);
+  }
+}
+
+.col-inner{
+  @include flex(1, 1, auto); 
+  width: 100%;
+  padding: 10px;
+  position: relative;
+  -ms-flex-preferred-size: auto;
+  @include display-flex;
+  @include flex-wrap(wrap);
+  @include breakpoint($md){
+    padding: 20px;
+  }
+  @include breakpoint($lrg){
+    padding: 40px;
+  }
+  > *{
+    /*min-height: 2px;*/
+    @include flex(0, 1, auto);  
+  }
+}
+
+.col-12{
+  width: 100%;  
+}
+
+.col-11{
+  width: 100%;
+  @include breakpoint($mdl){
+    width: 11/12 * 100%;
+ 
+  }  
+}
+.col-10{
+  width: 100%;
+  @include breakpoint($mdl){
+    width: 10/12 * 100%; 
+  }  
+}
+.col-9{
+  width: 100%;
+  @include breakpoint($md){
+    width: 9/12 * 100%; 
+  }  
+}
+.col-8{
+  width: 100%;
+  @include breakpoint($mdl){
+    width: 8/12 * 100%; 
+  }  
+}
+.col-7{
+  width: 100%;
+  @include breakpoint($md){
+    width: 6/12 * 100%; 
+  }
+  @include breakpoint($mdl){
+    width: 7/12 * 100%; 
+  }  
+}
+.col-6{
+  width: 100%;
+  @include breakpoint($md){
+    width: 6/12 * 100%; 
+  }  
+}
+.col-5{
+  width: 100%;
+  @include breakpoint($md){
+    width: 6/12 * 100%; 
+  }
+  @include breakpoint($mdl){
+    width: 5/12 * 100%; 
+  }  
+}
+.col-4{
+  width: 100%;
+  @include breakpoint($md){
+    width: 6/12 * 100%; 
+  }
+  @include breakpoint($lrg){
+    width: 4/12 * 100%; 
+  }  
+}
+.col-3{
+  width: 100%;
+  @include breakpoint($md){
+    width: 6/12 * 100%; 
+  }
+  @include breakpoint($mdl){
+    width: 3/12 * 100%; 
+  }  
+}
+.col-2{
+  width: 100%;
+  @include breakpoint($mdl){
+    width: 2/12 * 100%; 
+  }  
+}
+.col-1{
+  width: 100%;
+  @include breakpoint($mdl){
+    width: 1/12 * 100%; 
+  }
+}

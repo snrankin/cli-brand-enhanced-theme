@@ -1,0 +1,260 @@
+$facebook: #3C599B;
+$twitter: #32CCFE;
+$google: #DD4B39;
+$linkedin: #0977B4;
+$tumblr: #2D4865;
+$pinterest: #CB2027;
+$flickr: #E30663;
+$inewswire: #1357A8;
+$instagram: #7C5641;
+
+$social-colors: (facebook, $facebook),
+                (twitter, $twitter),
+                (google, $google),
+                (linkedin, $linkedin),
+                (tumblr, $tumblr),
+                (pinterest, $pinterest),
+                (flickr, $flickr),
+                (newswire, $inewswire),
+                (instagram, $instagram);
+
+.social{
+  @include display-flex;
+  @include justify-content(center);
+  @include align-items(center);
+  div{
+    @include flex(0,1,auto);
+    padding: 5px;
+    @each $socialnetwork, $color in $social-colors {
+      a[href*="#{$socialnetwork}"]:hover i{
+        color: $color;  
+      }
+    }
+    a{
+      display: block;
+      font-size: 30px;
+    }
+    i{
+      @include transition(ease-in-out 0.2s all);  
+    }
+  }
+  &.icon4{
+    a{
+      display: block;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      &:hover{
+        background-color: #FFF;  
+      }
+    }
+    @each $socialnetwork, $color in $social-colors {
+      a:hover ##{$socialnetwork}{
+        fill: $color;  
+        stroke: $color;
+      }
+    }
+    svg{
+      width: 35px;
+      height: 35px;
+      path{
+        @include transition(all ease-in-out 0.3s);    
+        stroke-width: 1.7;
+      }
+    }
+  }
+}
+
+.twitter-slider-wrapper{
+  margin-top: 30px;   
+}
+
+.col-inner.aligncenter.twitter-feed{
+  padding: 0!important;
+  margin: 0 auto;  
+}
+
+.twitter-feed{
+  overflow: hidden;
+  display: block;
+  &:before{
+    content: '\f099';
+    font-family: 'FontAwesome';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    font-size: 50px;
+    @include transform(translateX(-50%));
+    z-index: 20;
+    color: $black;
+  }
+  .timeline-twitter-feed{
+    &.owl-carousel.owl-loaded{
+      max-width: 80vw;
+      margin: 0 auto;
+    }
+    .ttf-tweet{
+      width: 100%; 
+      text-align: center;
+      padding: 0px;
+      font-size: 16px;
+      font-weight: 300;
+      padding: 50px 30px; 
+      @include display-flex;
+      @include flex-wrap(wrap);
+      @include justify-content(center);
+      @include align-items(center);
+      @include breakpoint($md){
+        padding: 50px 40px 40px 40px; 
+      }
+      .ttf-tweet-row{  
+        @include flex(0,1,auto);
+        &:first-child{
+          @include order(2);
+        }
+        &:nth-child(2){
+          @include order(1);
+          width: 100%;
+        }
+        &:last-child{
+          @include order(3);
+          
+        }
+      }
+    }
+    .ttf-tweet-text{
+      text-align: center;
+      /*a{
+        word-break: break-all;  
+      }*/
+    }
+    .ttf-timestamp{ 
+      line-height: 20px;
+      &:before{
+        content: '\f017';
+        font-family: 'FontAwesome';
+        font-size: 20px;
+        line-height: 20px;
+        display: inline-block;
+        padding-right: 5px;
+      }
+    }
+  }
+  .owl-nav{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 50%;
+    @include transform(translateY(-50%));
+    @include display-flex;
+    @include flex-wrap(nowrap);
+    @include justify-content(space-between);
+    @include align-content(center);
+    >div{
+      @include flex(0,1,auto);
+      padding: 0 10px;
+      font-size: 30px;  
+    }
+  }
+}
+
+.owl-dots{
+  position: absolute;
+  left: 50%;
+  width: 100%;
+  bottom: 20px;
+  @include transform(translateX(-50%));
+  @include display-flex;
+  @include justify-content(center);
+  @include align-items(center);
+  @include flex-wrap(wrap);
+  .owl-dot{
+    @include flex(0,1,auto);
+    padding: 2px;
+    &:before{
+      content: '\f1db';
+      font-family: 'FontAwesome';
+      display: block;
+      font-size: 15px;
+      color: $color1;    
+    }
+    &.active:before{
+      content: '\f111';  
+    }
+    &:only-child{
+      display: none;  
+    }
+  }
+}
+
+.flex-col.social-grid{
+  padding: 2px; 
+}
+
+.social-grid-icon{
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  z-index: 2;  
+  font-size: 40px;
+  display: block;
+}
+
+.twitter-feed-wrapper{
+  .ttf-tweet-user-name{
+    display: none;  
+  }
+  .ttf-tweet-full-name{
+    display: block;
+    font-family: $secondary-font;
+    font-size: 12px;
+    padding: 10px;
+    @include breakpoint($md){
+      font-size: 16px;
+    }
+  }
+  .social-grid-icon{
+    display: none;  
+  }
+  .ttf-tweet-text{
+    font-weight: 700; 
+    font-family: $secondary-font;
+    font-size: 14px;
+    @include breakpoint($md){
+      font-size: 20px;
+    }
+  }
+  .ttf-timestamp{
+    font-family: $secondary-font;
+    font-size: 12px;
+    padding: 10px;
+    @include breakpoint($md){
+      font-size: 16px;
+    }
+    &:before{
+      content: "\f017"; 
+      font-family: 'FontAwesome';
+      display: inline-block;
+      padding-right: 5px; 
+    }  
+  }
+}
+
+.col-inner .instagram-wrapper{
+  @include flex(1,1,auto);  
+}
+
+.instagram-block{
+  position: relative;
+  overflow: hidden;
+  &:before{
+    content: '';
+    padding-bottom: 100%;
+    display: block;  
+  }
+}
+
+.ttf-tweet{
+  @extend p;
+}

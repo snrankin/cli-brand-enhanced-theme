@@ -1,0 +1,229 @@
+body{
+  font-family: $primary-font;  
+  padding: 0;
+  margin: 0;
+}
+
+a{
+  text-decoration: none;
+  color: $gray;
+  @include transition(all ease-in-out 0.3s);
+  &:hover{
+    color: $color1;  
+  }
+}
+
+h1,h2,h3,h4,h5,h6{
+  padding-bottom: 15px;  
+}
+
+h1, h2{
+  font-size: 24px;
+  @include breakpoint($lrg){
+    font-size: 28px;  
+  } 
+}
+
+h3{
+  font-size: 18px;
+  @include breakpoint($md){
+    font-size: 20px;  
+  }
+  @include breakpoint($lrg){
+    font-size: 24px;  
+  }  
+}
+
+h4{
+  font-size: 16px;
+  @include breakpoint($md){
+    font-size: 18px;  
+  }
+  @include breakpoint($lrg){
+    font-size: 20px;  
+  }  
+}
+
+h5{
+  font-size: 12px;
+  @include breakpoint($md){
+    font-size: 16px;  
+  }
+  @include breakpoint($lrg){
+    font-size: 18px;  
+  }  
+}
+
+p{
+  font-size: 16px;  
+  padding-bottom: 20px;
+  &:last-of-type{
+    padding-bottom: 0;  
+  }
+  &:empty{
+    display: none;  
+  }
+  @include breakpoint($lrg){
+    font-size: 20px;
+    padding-bottom: 30px; 
+  }
+}
+
+ul, ol{
+  margin-left: 20px;
+  padding-bottom: 20px;
+  li{
+    @extend p;
+    padding-bottom: 10px;  
+  }
+}
+
+ul{
+  list-style-type: square;  
+}
+
+ol{
+  list-style-type: decimal;  
+}
+
+strong, b{
+  font-weight: 700;  
+}
+
+em{
+  font-style: italic;  
+}
+
+@font-face {
+	font-family: 'CLi-Social';
+	src:url('../fonts/icomoon.eot?25co08');
+	src:url('../fonts/icomoon.eot?#iefix25co08') format('embedded-opentype'),
+		url('../fonts/icomoon.ttf?25co08') format('truetype'),
+		url('../fonts/icomoon.woff?25co08') format('woff'),
+		url('../fonts/icomoon.svg?25co08#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="cli-"], [class*=" cli-"] {
+	font-family: 'CLi-Social';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.cli-facebook:before {
+	content: "\e600";
+}
+.cli-facebook-circle:before {
+	content: "\e601";
+}
+.cli-facebook-square:before {
+	content: "\e602";
+}
+.cli-facebook-square-round:before {
+	content: "\e603";
+}
+.cli-flickr:before {
+	content: "\e604";
+}
+.cli-flickr-circle:before {
+	content: "\e605";
+}
+.cli-flickr-square:before {
+	content: "\e606";
+}
+.cli-flickr-square-round:before {
+	content: "\e607";
+}
+.cli-google:before {
+	content: "\e608";
+}
+.cli-google-circle:before {
+	content: "\e609";
+}
+.cli-google-square:before {
+	content: "\e60a";
+}
+.cli-google-square-round:before {
+	content: "\e60b";
+}
+.cli-instagram:before {
+	content: "\e60c";
+}
+.cli-instagram-circle:before {
+	content: "\e60d";
+}
+.cli-instagram-square:before {
+	content: "\e60e";
+}
+.cli-instagram-square-round:before {
+	content: "\e60f";
+}
+.cli-linkedin:before {
+	content: "\e610";
+}
+.cli-linkedin-circle:before {
+	content: "\e611";
+}
+.cli-linkedin-square:before {
+	content: "\e612";
+}
+.cli-linkedin-square-round:before {
+	content: "\e613";
+}
+.cli-newswire:before {
+	content: "\e614";
+}
+.cli-newswire-circle:before {
+	content: "\e615";
+}
+.cli-newswire-square:before {
+	content: "\e616";
+}
+.cli-newswire-square-round:before {
+	content: "\e617";
+}
+.cli-pinterest:before {
+	content: "\e618";
+}
+.cli-pinterest-circle:before {
+	content: "\e619";
+}
+.cli-pinterest-square:before {
+	content: "\e61a";
+}
+.cli-pinterest-square-round:before {
+	content: "\e61b";
+}
+.cli-tumblr:before {
+	content: "\e61c";
+}
+.cli-tumblr-circle:before {
+	content: "\e61d";
+}
+.cli-tumblr-square:before {
+	content: "\e61e";
+}
+.cli-tumblr-square-round:before {
+	content: "\e61f";
+}
+.cli-twitter:before {
+	content: "\e620";
+}
+.cli-twitter-circle:before {
+	content: "\e621";
+}
+.cli-twitter-square:before {
+	content: "\e622";
+}
+.cli-twitter-square-round:before {
+	content: "\e623";
+}

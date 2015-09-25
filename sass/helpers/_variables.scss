@@ -1,0 +1,37 @@
+
+$base-font-size: 16px;
+
+//breakpoints
+$mds: 480px;
+$md: 700px;
+$mdl: 900px;
+$lrg: 1100px;
+$xlrg: 1300px;
+$xxlrg: 1800px;
+
+$landscape-phone: (max-width 700px) (max-height 400px) (orientation landscape);
+
+$color1: #FFF200;
+$color2: #363636;
+$color3: #707070;
+$color4: #231F20;
+$color5: #EBEBEB;
+
+$gray: #707070;
+$off-white: #E1E1E1;
+$black: #231F20;
+
+$colors: $color1 $color2 $color3 $color4 $color5;
+
+$main-colors: (color1, $color1),
+              (color2, $color2),
+              (color3, $color3),
+              (color4, $color4),
+              (color5, $color5);
+              
+$grid-width: 1050px;
+
+$primary-font: 'Open Sans', sans-serif;
+$secondary-font: 'Montserrat', sans-serif;
+
+$header-height: 110px;

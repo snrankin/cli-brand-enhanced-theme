@@ -1,0 +1,126 @@
+
+
+.footer-inner{
+  width: 100%;
+  @include breakpoint($md){
+    @include display-flex;
+    @include flex-wrap(nowrap);
+    @include justify-content(center);
+    @include align-items(stretch);  
+  }
+}
+
+#bottom-footer{
+  padding: 0 20px;
+  @include breakpoint($mdl){
+    padding: 0;
+  }
+}
+
+#bottom-footer .footer-inner{
+  border-top: solid 1px #FFF; 
+  padding: 20px;
+  @include breakpoint($mdl){
+    @include justify-content(flex-end);
+  }
+  .textwidget{
+    text-align: center;
+    font-weight: 300;
+    font-size: 12px; 
+    @include breakpoint($mdl){
+      text-align: right;
+    }
+  }
+}
+
+.footer-column{
+  @include breakpoint($md){
+    width: 50%;
+    @include flex(1,1,auto);
+    @include display-flex;
+    @include flex-direction(column);
+    @include justify-content(center);
+    @include align-items(center);
+    > *{
+      @include flex(0,1,auto);
+    }
+  }
+  .widget-title{
+    text-transform: uppercase;
+    font-weight: 300;
+    padding-bottom: 15px; 
+    text-align: center;
+    @include breakpoint($md){
+      text-align: left;  
+    }
+  }
+  .company-address{
+    font-weight: 400;
+    font-size: 12px;  
+  }
+  .widget_sp_image a{
+    display: block;
+    max-width: 350px;
+    margin: 0 auto;
+    img{
+      width: 100%;
+      height: auto !important;
+      display: block;
+      margin: 0 auto;  
+    }
+  }
+}
+
+#footer-1{
+  padding: 20px;
+  background: $color1;  
+  @include breakpoint($md){
+    min-height: 250px;
+  }
+}
+
+#footer-2{
+  .footer-widget{
+    max-width: 350px;
+    .textwidget{ 
+      @include display-flex;
+      @include flex-wrap(wrap);
+      @include justify-content(center);
+      @inclue align-items(center); 
+      > div{
+        @include flex(0,1,auto); 
+        width: 100%;
+        padding: 10px;
+        @include breakpoint($mdl){
+          &:first-child, &:nth-child(2){
+            width: auto;  
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer-widget .menu{
+  padding:0;
+  margin: 0;
+  list-style: none;
+  @include display-flex;
+  @include flex-wrap(wrap);
+  @include justify-content(center);
+  @inclue align-items(center);  
+  li{
+    width: auto;
+    padding: 0 10px;
+    @include breakpoint($lrg){
+      padding: 0 5px;
+    }
+    a{
+      display: block;
+      line-height: 30px;
+      text-align: center;
+      text-transform: lowercase;
+      font-weight: 700;  
+    }
+  }
+}

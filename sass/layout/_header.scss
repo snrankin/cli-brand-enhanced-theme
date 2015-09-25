@@ -1,0 +1,155 @@
+#header{
+  width: 100%;
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 50%;
+  @include transform(translateX(-50%));
+  &.header-in-grid{
+    max-width: $grid-width;
+  }
+}
+
+body.admin-bar #header.sticky.headhesive.stuck{
+  top: 32px;  
+}
+
+.header-inner{
+  padding: 10px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: $grid-width;
+  position: relative;  
+  @include breakpoint($mdl){
+    padding: 0 40px;
+    @include display-flex;
+    @include align-items(stretch);
+    @include justify-content(space-between);
+    @include flex-wrap(nowrap);
+  }
+}
+
+.site-logo{
+  width: 100%;
+  max-width: 200px;
+  @include display-flex;
+  @include flex-direction(column);
+  @include justify-content(center);
+  @include breakpoint($mdl){
+    @include flex(0,1,auto);
+    width: auto;  
+    max-width: 250px;
+  }
+  a{
+    @include flex(0,1,auto);
+    display: block; 
+    margin: 0 auto;
+  }
+  img{
+    width: 100%;
+    height: auto;  
+  }
+}
+
+#header .menu-container{
+  width: 100%;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  @include breakpoint($mdl){
+    @include flex(0,1,auto); 
+    overflow: hidden;
+    width: auto;  
+    display: block;
+    position: relative;
+    top: auto;
+    left: auto;
+    &.hidden-menu{
+      margin-right: 100px;
+      ul.menu{
+        @include transform(translateX(100%));
+        &.active{
+          @include transform(translateX(0));
+        }
+      }
+    }
+  }
+}
+
+.menu-button-area{
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  z-index: 20;
+  cursor: pointer;
+  @include transform(translateY(-50%)); 
+  @include breakpoint($mdl){
+    @include display-flex;
+    @include align-items(center);
+    @include justify-content(center);  
+    @include flex-wrap(nowrap);
+    .menu-button, .menu-button-txt{
+      @include flex(0,1,auto); 
+    }
+    .menu-button-txt{
+      padding-left: 10px; 
+    }
+    &.hide_button{
+      display: none;
+    }
+  }
+  @include breakpoint($mdl){
+    right: 0;
+  } 
+}
+
+.page-header{
+  position: relative;
+  @include breakpoint($lrg){
+   min-height: 400px;
+  }  
+}
+
+.page-header-inner{
+  width: 100%;
+  max-width: $grid-width;
+  margin: 0 auto;
+  padding: 40px 20px;
+  min-height: 50vh;
+  @include breakpoint($md){
+   width: 80%;
+   padding: 60px 0px;
+  }
+}
+
+body.page-id-135{
+  .page-header-inner{
+    padding: 40px 20px 0 20px;
+    @include breakpoint($md){
+      padding: 60px 0 0;
+    }
+    .header-block .single-image{
+      margin-bottom: -8px;  
+    }
+  }
+}
+
+.header-block{
+  @include flex(0,1,auto); 
+  h1{
+    color: $color1;
+    @include breakpoint($md){
+      font-size: 50px;
+    }
+  }
+  p{
+    color: #FFF;
+    font-family: 'Crimson Text';
+    font-style: italic;
+    font-size: 20px;  
+    @include breakpoint($md){
+      font-size: 30px;
+    }
+  }
+}

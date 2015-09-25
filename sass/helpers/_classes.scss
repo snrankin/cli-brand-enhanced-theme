@@ -1,0 +1,145 @@
+.white-txt{
+  color: #FFF;
+  *{
+    color: #FFF;  
+  }
+}
+
+.border{
+  border-style: solid;  
+}
+
+.top-border{
+  border-top-style: solid;  
+}
+
+.bottom-border{
+  border-bottom-style: solid;  
+}
+
+.left-border{
+  @include breakpoint($md){
+    border-left-style: solid; 
+  }
+}
+
+.right-border{
+  @include breakpoint($md){
+    border-right-style: solid; 
+  }
+}
+
+.thin-border{
+  border-width: 1px;  
+}
+
+.medium-border{
+  border-width: 5px;  
+}
+
+.thick-border{
+  border-width: 10px;  
+}
+
+@each $maincolor, $color in $main-colors {
+  .#{$maincolor}-border{
+    border-color: $color;  
+  }
+}
+
+.gray-border{
+  border-color: $gray;  
+}
+
+.white-border{
+  border-color: #FFF;  
+}
+
+@each $maincolor, $color in $main-colors {
+  .#{$maincolor}-txt{
+    color: $color;  
+  }
+}
+
+@each $maincolor, $color in $main-colors {
+  .#{$maincolor}-bg{
+    background-color: $color;  
+  }
+}
+
+.no-padding{
+  padding: 0;  
+  &.row-wrapper .flex-row{
+    padding: 0;  
+    .col-inner{
+      padding: 20px;  
+      @include breakpoint($md){
+        padding: 40px;  
+      }
+    }
+  }
+  &.col-inner{
+    padding: 0;  
+  }
+}
+
+.in-grid{
+  @include breakpoint($mdl){
+    margin: 0 auto;
+    max-width: $grid-width;
+    width: 80%;
+  }
+}
+
+.img-col .col-inner{
+  min-height: 150px;
+  @include breakpoint($md){
+    min-height: 300px;  
+  }
+  @include breakpoint($lrg){
+    min-height: 500px;  
+  }
+}
+
+@each $maincolor, $color in $main-colors {
+  *[class*="hvr"].#{$maincolor}{
+    display: block;
+    &:before{
+      background: $color; 
+      border-color: $color !important;
+    }
+    &:hover *{
+      color: #FFF;    
+    }
+    *{
+      @include transition(ease-in-out 0.3s all);  
+    }
+  }
+}
+
+*[class*="hvr"].color1:hover{ 
+  color: $black !important; 
+  *{
+    color: $black !important; 
+  }
+}
+
+.single-image{
+  max-width: 100%;
+  height: auto;  
+}
+
+.aligncenter{
+  margin: 10px auto;  
+  display: block;
+}
+
+.alignright{
+  float: right;
+  margin: 0 0 10px 10px;  
+}
+
+.alignleft{
+  float: left;
+  margin: 0 10px 10px 0;  
+}

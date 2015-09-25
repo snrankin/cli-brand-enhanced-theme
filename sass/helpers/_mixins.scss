@@ -1,0 +1,103 @@
+@mixin bg-opacity($color, $opacity) {
+  background: $color; /* The Fallback */
+  background: rgba($color, $opacity);
+}
+
+@mixin ie($ver) {
+  html[data-useragent*='MSIE $ver']  {
+    @content;
+  }
+}
+
+@mixin display-flex{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex-direction($flex-direction){
+  
+  @if $flex-direction == row-reverse {
+    -webkit-box-direction: reverse;
+    -moz-box-direction: reverse;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;  
+  }
+  @else if $flex-direction == column {
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;  
+  }
+  @else if $flex-direction == column-reverse {
+    -webkit-box-direction: reverse;
+    -moz-box-direction: reverse;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;  
+  }
+  @else {
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;  
+  }
+    
+}
+
+@mixin wrap($wrap){
+  -webkit-flex-wrap: $wrap;
+  -ms-flex-wrap: $wrap;
+  flex-wrap: $wrap;
+}
+
+@mixin justify-content($justify){
+  -webkit-box-pack: $justify;
+  -moz-box-pack: $justify;
+  -webkit-justify-content: $justify;
+  -ms-flex-pack: $justify;
+  justify-content: $justify;
+}
+
+@mixin align-items($align-items){
+  -webkit-box-align: $align-items;
+  -moz-box-align: $align-items;
+  -webkit-align-items: $align-items;
+  -ms-flex-align: $align-items;
+  align-items: $align-items;
+}
+
+@mixin align-self($align-self){
+  -webkit-align-self: $align-self;
+  -ms-flex-item-align: $align-self;
+  align-self: $align-self;
+}
+
+@mixin flex($grow, $shrink, $basis){
+  -webkit-box-flex: $grow;
+  -moz-box-flex: $grow;
+  -webkit-flex: $grow $shrink $basis;
+  -ms-flex: $grow $shrink $basis;
+  flex: $grow $shrink $basis;
+}
+
+@mixin order($order){
+  -webkit-box-ordinal-group: $order + 1;
+  -moz-box-ordinal-group: $order + 1;
+  -webkit-order: $order;
+  -ms-flex-order: $order;
+  order: $order;
+}

@@ -1,0 +1,96 @@
+.caldera-grid{
+  width: 100%; 
+}
+
+.form .caldera-grid{
+  .form-control{
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    font-size: 16px;
+  }
+  .form-group{
+    margin-bottom: 20px;  
+  }
+  input[type="text"],
+  input[type="email"],
+  textarea{
+    color: $black;  
+    padding: 10px;
+    line-height: 20px;
+    background-color: $off-white;
+    font-family: $primary-font;
+  }
+  input[type="text"],
+  input[type="email"]{
+    height: 50px;
+  }
+  div[class^="col"]{
+    padding-left: 10px;
+    padding-right: 10px;  
+  }
+  .row{
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+}
+
+.content-bottom-widget .caldera-grid{
+  max-width: $grid-width;
+  margin: 0 auto;
+  .row{
+    @include display-flex;
+    @include justify-content(center);
+    @include align-items(center);
+    @include flex-wrap(wrap);  
+    margin: 0;
+    padding: 10px 0;
+    @include breakpoint($md){
+      @include flex-wrap(nowrap);
+    }
+    div[class^="col-"]{
+      width: 100%;
+      @include flex(0,1,auto);
+      padding: 10px 0;
+      @include breakpoint($md){
+        width:auto;
+        padding: 0 10px;
+        &:nth-child(2){
+          @include flex(1,1,auto);
+        }
+      }
+    }
+    .col-md-6{
+      width: 100% !important;
+      max-width: 500px; 
+    }
+  }
+  .btn{
+    margin-top: 10px;
+    @include breakpoint($md){
+      margin-top: 0;  
+    }
+  }
+  label.newsletter-label{
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    color: #FFF;
+    margin: 0;
+    @include breakpoint($mdl){
+      font-size: 20px;  
+    }
+  }
+  .form-group{
+    margin: 0; 
+    text-align: center;
+    input[type="email"]{
+      border: none;
+      padding: 0 15px;
+      line-height: 35px;
+      height: 38px;  
+      box-shadow: none;
+      border-radius: 0;
+    }
+  }
+}
